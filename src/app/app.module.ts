@@ -8,11 +8,16 @@ import { TitleBarComponent } from './title-bar/title-bar.component';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { FormsModule } from '@angular/forms'; // Add this import for ngModel
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
     TitleBarComponent,
-    NavigationMenuComponent
+    NavigationMenuComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,10 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatIconModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
