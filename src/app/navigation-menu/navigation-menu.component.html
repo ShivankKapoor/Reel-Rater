@@ -1,0 +1,35 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav
+      class="side-nav"
+      #sidenav
+      [fixedInViewport]="true"
+      mode="side"
+      [(opened)]="opened"
+      (opened)="events.push('open!')"
+      (closed)="events.push('close!')"
+    >
+      <div class="close-button">
+        <button mat-icon-button color="primary" (click)="closeMenu()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="navigation-buttons">
+        <div class="navigation-button-div">
+          <button class="navigation-button" mat-raised-button>
+            Navigation Button 1
+          </button>
+        </div>
+        <div class="navigation-button-div">
+          <button class="navigation-button" mat-raised-button>
+            Navigation Button 2
+          </button>
+        </div>
+        <div class="navigation-button-div">
+          <button class="navigation-button" mat-raised-button>
+            Navigation Button 3
+          </button>
+        </div>
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  
