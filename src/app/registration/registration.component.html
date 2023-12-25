@@ -1,48 +1,47 @@
-<div class="login-container">
-    <mat-card class="login-card">
-      <mat-card-header>
-        <mat-card-title>Register</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <form>
-          <mat-form-field>
-            <mat-label>Username</mat-label>
-            <input matInput [(ngModel)]="username" name="username" required />
-          </mat-form-field>
-  
-          <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input
-              matInput
-              type="password"
-              [(ngModel)]="password"
-              name="password"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Retype Password</mat-label>
-            <input
-              matInput
-              type="password"
-              [(ngModel)]="retypedPassword"
-              name="password"
-              required
-            />
-          </mat-form-field>
-          <button mat-raised-button color="primary" (click)="register()">
-            Login
-          </button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  
-    <mat-card class="new-user-card">
-      <mat-card-content>
+<div class="register-container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="username" name="username" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Retype Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [(ngModel)]="retypedPassword"
+            name="password"
+            required
+          />
+        </mat-form-field>
         <button mat-raised-button color="primary" (click)="register()">
-          Already have an account?
+          Login
         </button>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="old-user-card">
+    <mat-card-content>
+      <button mat-raised-button color="accent" routerLink="/login">
+        Already have an account?
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
