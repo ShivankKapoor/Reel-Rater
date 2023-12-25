@@ -4,7 +4,7 @@ import { SidebarControlService } from '../navigation-menu/sidebar-control.servic
 @Component({
   selector: 'app-title-bar',
   templateUrl: './title-bar.component.html',
-  styleUrl: './title-bar.component.scss'
+  styleUrl: './title-bar.component.scss',
 })
 export class TitleBarComponent {
   constructor(private sidebarControlService: SidebarControlService) {}

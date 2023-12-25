@@ -4,7 +4,7 @@ import { SidebarControlService } from './sidebar-control.service';
 @Component({
   selector: 'app-navigation-menu',
   templateUrl: './navigation-menu.component.html',
-  styleUrl: './navigation-menu.component.scss'
+  styleUrl: './navigation-menu.component.scss',
 })
 export class NavigationMenuComponent {
   events: string[] = [];
