@@ -12,13 +12,15 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { FormsModule } from '@angular/forms'; // Add this import for ngModel
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import {MatDividerModule} from '@angular/material/divider'
+import {MatDividerModule} from '@angular/material/divider';
+import { RegistrationComponent } from './registration/registration.component'
 @NgModule({
   declarations: [
     AppComponent,
     TitleBarComponent,
     NavigationMenuComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
