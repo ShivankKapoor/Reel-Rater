@@ -12,6 +12,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { FormsModule } from '@angular/forms'; // Add this import for ngModel
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     FormsModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

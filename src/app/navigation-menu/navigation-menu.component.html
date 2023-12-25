@@ -1,6 +1,13 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav class="side-nav" #sidenav [fixedInViewport]="true" mode="side" [(opened)]="opened"
-    (opened)="events.push('open!')" (closed)="events.push('close!')">
+  <mat-sidenav
+    class="side-nav"
+    #sidenav
+    [fixedInViewport]="true"
+    mode="side"
+    [(opened)]="opened"
+    (opened)="events.push('open!')"
+    (closed)="events.push('close!')"
+  >
     <div class="image-div">
       <img class="image" src="assets/icon.png" />
     </div>
@@ -11,18 +18,42 @@
     </div>
     <div class="navigation-buttons">
       <div class="navigation-button-div">
-        <button class="navigation-button" mat-raised-button>
-          Navigation Button 1
+        <button class="navigation-button" mat-button>
+          <mat-icon>star</mat-icon>
+          Table
         </button>
       </div>
       <div class="navigation-button-div">
-        <button class="navigation-button" mat-raised-button>
-          Navigation Button 2
+        <button class="navigation-button" mat-button>
+          <mat-icon>star</mat-icon>
+          Table
         </button>
       </div>
       <div class="navigation-button-div">
-        <button class="navigation-button" mat-raised-button>
-          Navigation Button 3
+        <button class="navigation-button" mat-button>
+          <mat-icon>star</mat-icon>
+          Table
+        </button>
+      </div>
+    </div>
+    <mat-divider class="menu-divider"></mat-divider>
+    <div class="navigation-buttons">
+      <div class="navigation-button-div">
+        <button class="navigation-button" mat-button>
+          <mat-icon>star</mat-icon>
+          Table
+        </button>
+      </div>
+      <div class="navigation-button-div">
+        <button class="navigation-button" mat-button>
+          <mat-icon>star</mat-icon>
+          Table
+        </button>
+      </div>
+      <div class="navigation-button-div">
+        <button class="navigation-button" mat-button>
+          <mat-icon>star</mat-icon>
+          Table
         </button>
       </div>
     </div>
