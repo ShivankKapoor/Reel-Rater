@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   private async loadUsers() {
     try {
+      this.UserService.getSpecificUser("sachit");
       this.users = await this.UserService.getUsers();
     } catch (error) {
       console.log(error);

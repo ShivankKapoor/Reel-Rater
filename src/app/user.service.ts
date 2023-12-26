@@ -25,8 +25,15 @@ export class UserService {
       .getFirstListItem(query, {
         expand: 'relField1,relField2.subRelField',
       });
-
-    console.log(record);
     return record;
+  }
+
+  async isGoodLogin(userName: string, password:string){
+    var attempUser:any = await this.getSpecificUser(userName);
+    if(attempUser.password===password){
+      return attempUser.id;
+    }else{
+      return false;
+    }
   }
 }
