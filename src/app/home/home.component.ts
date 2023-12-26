@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UserService } from '../user.service';
 import { catchError } from 'rxjs';
+import { UserModel } from '../models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,13 @@ import { catchError } from 'rxjs';
 export class HomeComponent implements OnInit {
   constructor(private UserService: UserService) {}
   ngOnInit(): void {
-    this.getUsers();
+    this.loadUsers();
   }
-  users!: any;
-  private async getUsers() {
+  users!: UserModel[];
+
+  private async loadUsers() {
     try {
-      this.users = this.UserService.getUsers();
+      this.users = await this.UserService.getUsers();
     } catch (error) {
       console.log(error);
     }
