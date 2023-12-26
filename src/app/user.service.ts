@@ -17,10 +17,12 @@ export class UserService {
   }
 
   async getSpecificUser(userName: string) {
+    var query = 'username="' + userName + '"';
+    console.log(query);
     const pb = new PocketBase(environment.baseUrl);
     const record: UserModel[] = await pb
       .collection('reviewer')
-      .getFirstListItem('username="shivank"', {
+      .getFirstListItem(query, {
         expand: 'relField1,relField2.subRelField',
       });
 
