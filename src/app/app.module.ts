@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatInputModule,
     MatDividerModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],

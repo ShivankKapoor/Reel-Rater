@@ -15,7 +15,7 @@ Before you begin, ensure you have met the following requirements:
 
 - Node.js and npm installed.
 - Angular CLI installed globally: `npm install -g @angular/cli`
-- Supabase account and API key: [Supabase](https://supabase.io/)
+- PocketBase URL is set correctly in environments
 
 ## Installation
 

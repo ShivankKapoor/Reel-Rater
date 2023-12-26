@@ -9,9 +9,13 @@ export class RegistrationComponent {
   username: string | undefined;
   password: string | undefined;
   retypedPassword: string | undefined;
-
+  showPasswordValue:boolean = false;
   register() {
     // Add your login logic here
     console.log('Register button clicked');
+  }
+
+  showPassword(){
+    this.showPasswordValue=!this.showPasswordValue;
   }
 }

@@ -1,16 +1,32 @@
 import { Component } from '@angular/core';
+import { UserService } from '../backend-services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
-  username: string | undefined;
-  password: string | undefined;
+  username: string = '';
+  password: string = '';
+  showPasswordValue:boolean = false;
+  constructor(private userservice: UserService, private router:Router) {}
 
-  login() {
-    // Add your login logic here
+  async login() {
+    console.log(this.showPasswordValue);
     console.log('Login button clicked');
+    console.log('Username: ' + this.username);
+    console.log('Password: ' + this.password);
+    var response = await this.userservice.isGoodLogin(this.username, this.password);
+    if(response){
+      this.router.navigate(['/']);
+    }else{
+      
+    }
+  }
+
+  showPassword(){
+    this.showPasswordValue=!this.showPasswordValue;
   }
 }
