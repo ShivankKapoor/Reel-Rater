@@ -1,6 +1,6 @@
 # Reel Rater
 
-This is an Angular application that allows users to rate movies and keep track of their ratings. The application uses Angular, Angular Material, and Supabase for data storage.
+This is an Angular application that allows users to rate movies and keep track of their ratings. The application uses Angular, Angular Material, and Pocketbase for data storage.
 
 ## Features
 
