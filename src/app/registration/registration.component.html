@@ -14,7 +14,7 @@
           <mat-label>Password</mat-label>
           <input
             matInput
-            type="password"
+            [type]="showPasswordValue ? 'text' : 'password'" 
             [(ngModel)]="password"
             name="password"
             required
@@ -24,12 +24,13 @@
           <mat-label>Retype Password</mat-label>
           <input
             matInput
-            type="password"
+            [type]="showPasswordValue ? 'text' : 'password'" 
             [(ngModel)]="retypedPassword"
             name="password"
             required
           />
         </mat-form-field>
+        <mat-checkbox (click)="showPassword()">Show Password</mat-checkbox>
         <button mat-raised-button color="primary" (click)="register()">
           Login
         </button>
