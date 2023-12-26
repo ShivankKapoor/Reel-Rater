@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
   username: string = '';
   password: string = '';
-
+  showPasswordValue:boolean = false;
   constructor(private userservice: UserService, private router:Router) {}
 
   async login() {
+    console.log(this.showPasswordValue);
     console.log('Login button clicked');
     console.log('Username: ' + this.username);
     console.log('Password: ' + this.password);
@@ -23,5 +24,9 @@ export class LoginPageComponent {
     }else{
       
     }
+  }
+
+  showPassword(){
+    this.showPasswordValue=!this.showPasswordValue;
   }
 }
