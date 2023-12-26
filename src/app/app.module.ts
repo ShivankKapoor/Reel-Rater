@@ -16,7 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCardModule,
     MatInputModule,
     MatDividerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

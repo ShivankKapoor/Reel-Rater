@@ -29,7 +29,11 @@ export class UserService {
   }
 
   async isGoodLogin(userName: string, password:string){
+    try{
     var attempUser:any = await this.getSpecificUser(userName);
+    }catch(error){
+      return false;
+    }
     if(attempUser.password===password){
       return attempUser.id;
     }else{
