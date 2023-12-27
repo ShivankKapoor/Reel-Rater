@@ -9,7 +9,7 @@
 
 .topBar {
   margin-left: -10px;
-  margin-right: -10px;
+  
   margin-top: -10px;
   display: flex;
   align-items: center; /* Vertical centering */
@@ -25,4 +25,16 @@
 }
 .button-icon {
   padding-left: 10px;
+}
+
+.userName{
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.menu-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

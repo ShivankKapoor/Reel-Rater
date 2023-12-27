@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CurrentUserService {
+
+  constructor(private router:Router){}
+
   currentUser$ = new BehaviorSubject<
     { id: string; userName: string } | null | undefined
   >(undefined);
@@ -38,5 +42,10 @@ export class CurrentUserService {
     } else {
       return result;
     }
+  }
+
+  async logout(){
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SidebarControlService } from '../navigation-menu/sidebar-control.service';
 import { CurrentUserService } from '../authentication/current-user.service';
 
@@ -7,13 +7,19 @@ import { CurrentUserService } from '../authentication/current-user.service';
   templateUrl: './title-bar.component.html',
   styleUrl: './title-bar.component.scss',
 })
-export class TitleBarComponent {
-  constructor(private sidebarControlService: SidebarControlService, private userService:CurrentUserService) {}
+export class TitleBarComponent{
+  userName:string=""
+  constructor(private sidebarControlService: SidebarControlService, public userService:CurrentUserService) {}
+
   toggleSidebar() {
     this.sidebarControlService.toggleSidebar();
   }
+
   canShowSidebar():boolean{
-    console.log(this.userService.isUserLoggedIn());
+    var properCapital = this.userService.getUserName();
+    this.userName = properCapital.charAt(0).toUpperCase() + properCapital.slice(1);
     return this.userService.isUserLoggedIn();
   }
+
+
 }

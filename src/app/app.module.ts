@@ -19,6 +19,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { CurrentUserService } from './authentication/current-user.service';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { CurrentUserService } from './authentication/current-user.service';
     MatInputModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
