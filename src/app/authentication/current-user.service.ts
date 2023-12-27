@@ -9,8 +9,10 @@ export class CurrentUserService {
     { id: string; userName: string } | null | undefined
   >(undefined);
 
-  setCurrentUser(id:string) {
-    localStorage.removeItem('token')
+  setCurrentUser(id:string, userName:string) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userName');
     localStorage.setItem('token',id);
+    localStorage.setItem('userName',userName);
   }
 }

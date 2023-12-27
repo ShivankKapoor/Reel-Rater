@@ -33,7 +33,7 @@ export class LoginPageComponent {
         this.password
       );
       if (response) {
-        this.currentUserService.setCurrentUser(response);
+        this.currentUserService.setCurrentUser(response, this.username);
         this.router.navigate(['/home']);
       } else {
         this.warning.openSnackBar('Invalid username or password', 'close');

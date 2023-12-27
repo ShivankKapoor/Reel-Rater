@@ -7,7 +7,7 @@ import { CanActivate, Router } from '@angular/router';
 export class RedoLoginGuardService implements CanActivate {
   constructor(private router: Router) {}
   canActivate(): boolean {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('token') && localStorage.getItem('userName')) {
       this.router.navigate(['/home']);
       return false;
     } else {
