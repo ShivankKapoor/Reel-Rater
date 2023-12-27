@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { UserService } from '../backend-services/user.service';
+import { UserService } from '../../backend-services/user.service';
 import { catchError } from 'rxjs';
-import { UserModel } from '../models/user.model';
+import { UserModel } from '../../models/user.model';
 
 @Component({
   selector: 'app-home',
