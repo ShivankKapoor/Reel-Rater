@@ -9,7 +9,7 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginPageComponent } from './components/login-page/login-page.component';
-import { FormsModule } from '@angular/forms'; // Add this import for ngModel
+import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
