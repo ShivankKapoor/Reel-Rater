@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../backend-services/user.service';
 import { Router } from '@angular/router';
-import { MiniWarningService } from '../../mini-warning/mini-warning.service';
+import { MiniWarningService } from '../../warning services/mini-warning.service';
 import { CurrentUserService } from '../../authentication/current-user.service';
 
 @Component({
