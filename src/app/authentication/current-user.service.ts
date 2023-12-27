@@ -16,8 +16,10 @@ export class CurrentUserService {
     localStorage.setItem('userName', userName);
   }
 
-  isUserLoggedIn() {
-    return localStorage.getItem('userName') && localStorage.getItem('token');
+  isUserLoggedIn():boolean {
+    const userName = localStorage.getItem('userName');
+    const token = localStorage.getItem('token');
+    return (userName !== null && token !== null);
   }
 
   getUserName(): string {

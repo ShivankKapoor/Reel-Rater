@@ -1,5 +1,5 @@
 <div class="topBar">
-  <div class="side-button" *ngIf="true">
+  <div class="side-button" *ngIf="canShowSidebar()">
     <button
       class="button-button"
       (click)="toggleSidebar()"
