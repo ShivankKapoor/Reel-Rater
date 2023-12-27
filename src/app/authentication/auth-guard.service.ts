@@ -15,9 +15,7 @@ import { CurrentUserService } from './current-user.service';
 export class AuthGuardService implements CanActivate {
   constructor(
     private router: Router,
-    private currentUserService: CurrentUserService
   ) {}
-
   canActivate(): boolean {
     if (localStorage.getItem('token')) {
       return true;
