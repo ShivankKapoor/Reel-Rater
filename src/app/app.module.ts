@@ -1,4 +1,4 @@
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,8 +17,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { HomeComponent } from './components/home/home.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { AuthGuardService } from './authentication/auth-guard.service';
-import { CurrentUserService } from './authentication/current-user.service';
 import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
