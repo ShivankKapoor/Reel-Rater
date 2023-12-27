@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { HomeComponent } from './home/home.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { HomeComponent } from './components/home/home.component';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { RedoLoginGuardService } from './authentication/redo-login-guard.service';
 

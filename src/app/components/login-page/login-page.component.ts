@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { UserService } from '../backend-services/user.service';
+import { UserService } from '../../backend-services/user.service';
 import { Router } from '@angular/router';
-import { MiniWarningService } from '../mini-warning/mini-warning.service';
-import { CurrentUserService } from '../authentication/current-user.service';
+import { MiniWarningService } from '../../mini-warning/mini-warning.service';
+import { CurrentUserService } from '../../authentication/current-user.service';
 
 @Component({
   selector: 'app-login-page',

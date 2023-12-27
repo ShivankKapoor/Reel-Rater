@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarControlService } from '../navigation-menu/sidebar-control.service';
-import { CurrentUserService } from '../authentication/current-user.service';
+import { CurrentUserService } from '../../authentication/current-user.service';
 
 @Component({
   selector: 'app-title-bar',
