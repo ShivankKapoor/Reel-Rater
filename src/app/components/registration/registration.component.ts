@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { RegisterModel } from '../../models/register.model';
+import { RegistrationService } from '../../backend-services/registration.service';
+import { Router } from '@angular/router';
+import { MiniWarningService } from '../../warning services/mini-warning.service';
 
 @Component({
   selector: 'app-registration',
@@ -6,16 +10,24 @@ import { Component } from '@angular/core';
   styleUrl: './registration.component.scss',
 })
 export class RegistrationComponent {
-  username: string | undefined;
-  password: string | undefined;
-  retypedPassword: string | undefined;
+  username:string ="";
+  password: string ="";
+  retypedPassword: string ="";
   showPasswordValue:boolean = false;
-  register() {
-    // Add your login logic here
-    console.log('Register button clicked');
-  }
+
+  constructor(private registerUser:RegistrationService,private router: Router, private warn:MiniWarningService){}
 
   showPassword(){
     this.showPasswordValue=!this.showPasswordValue;
+  }
+
+  register(){
+    if(this.password===this.retypedPassword){
+      var newUser:RegisterModel={username:this.username, password:this.password}
+      console.log(newUser)
+      this.registerUser.registerUser(newUser);
+      this.router.navigate(['/']);
+      this.warn.openSnackBar("Account Created!","Close")
+    }
   }
 }

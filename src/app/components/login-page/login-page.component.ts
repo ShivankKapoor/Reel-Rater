@@ -22,11 +22,11 @@ export class LoginPageComponent {
 
   async login() {
     if (this.username === '' && this.password === '') {
-      this.warning.openSnackBar('Fields cannot be blank', 'close');
+      this.warning.openSnackBar('Fields cannot be blank', 'Close');
     } else if (this.username === '') {
-      this.warning.openSnackBar('Username cannot be empty', 'close');
+      this.warning.openSnackBar('Username cannot be empty', 'Close');
     } else if (this.password === '') {
-      this.warning.openSnackBar('Password cannot be empty', 'close');
+      this.warning.openSnackBar('Password cannot be empty', 'Close');
     } else {
       var response = await this.userservice.isGoodLogin(
         this.username,
@@ -36,7 +36,7 @@ export class LoginPageComponent {
         this.currentUserService.setCurrentUser(response, this.username);
         this.router.navigate(['/home']);
       } else {
-        this.warning.openSnackBar('Invalid username or password', 'close');
+        this.warning.openSnackBar('Invalid username or password', 'Close');
       }
     }
   }
