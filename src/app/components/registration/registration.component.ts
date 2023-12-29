@@ -22,12 +22,18 @@ export class RegistrationComponent {
   }
 
   register(){
+    if(this.password===""||this.username===""||this.retypedPassword===""){
+      this.warn.openSnackBar("Fields cannot be left blank","Close")
+      return
+    }
     if(this.password===this.retypedPassword){
       var newUser:RegisterModel={username:this.username, password:this.password}
       console.log(newUser)
       this.registerUser.registerUser(newUser);
       this.router.navigate(['/']);
-      this.warn.openSnackBar("Account Created!","Close")
+      this.warn.openSnackBar("Account created!","Close")
+      return
     }
+    this.warn.openSnackBar("Password doesnt match","Close")
   }
 }
