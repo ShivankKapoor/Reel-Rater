@@ -12,12 +12,25 @@
   <a class="link">
     <img class="text" src="assets/Header.png" />
   </a>
-  <button *ngIf="canShowSidebar()" [matMenuTriggerFor]="menu" mat-button class="userName">Hello, {{this.userName}}!</button>
+  <button
+    *ngIf="canShowSidebar()"
+    [matMenuTriggerFor]="menu"
+    mat-button
+    class="userName"
+  >
+    Hello, {{ this.userName }}!
+  </button>
 </div>
-
 
 <mat-menu #menu="matMenu">
   <div class="menu-content">
-    <button mat-raised-button color="warn" class="logout-button"  (click)="this.userService.logout();">Logout</button>
+    <button
+      mat-raised-button
+      color="warn"
+      class="logout-button"
+      (click)="this.userService.logout()"
+    >
+      <mat-icon>logout</mat-icon>Logout
+    </button>
   </div>
 </mat-menu>
