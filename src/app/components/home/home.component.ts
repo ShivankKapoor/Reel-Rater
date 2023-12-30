@@ -13,14 +13,15 @@ import { RatingModel } from '../../models/rating.model';
 export class HomeComponent implements OnInit {
   constructor(private UserService: UserService, private rating:RatingsService) {}
   ngOnInit(): void {
-    this.loadUsers();
+    this.loadRatings();
+
   }
   users!: UserModel[];
   ratings!:RatingModel[];
-  private async loadUsers() {
+  private async loadRatings() {
     try {
-      this.UserService.getSpecificUser("sachit");
       this.ratings = await this.rating.getAllRatings();
+      console.log(this.ratings);
     } catch (error) {
       console.log(error);
     }
