@@ -12,23 +12,21 @@ import { MoviesService } from '../../backend-services/movies.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  constructor(private rating:RatingsService, private movies:MoviesService) {}
+  constructor(private rating: RatingsService, private movies: MoviesService) {}
   ngOnInit(): void {
     this.loadRatings();
-
   }
   users!: UserModel[];
-  ratings!:RatingModel[];
+  ratings!: RatingModel[];
   private async loadRatings() {
     try {
       this.ratings = await this.rating.getAllRatings();
-      for(var i=0; i<this.ratings.length;i++){
+      for (var i = 0; i < this.ratings.length; i++) {
         var temp = this.ratings[i];
-        console.log(temp);
         var forMovie = temp.movie;
         var realTitle = (await this.movies.getMovie(forMovie)).title;
-        temp.movie=realTitle;
-        this.ratings[i]=temp;
+        temp.movie = realTitle;
+        this.ratings[i] = temp;
       }
     } catch (error) {
       console.log(error);
