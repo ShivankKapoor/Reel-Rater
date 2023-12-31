@@ -15,6 +15,8 @@ import { MovieRatingsService } from '../../backend-services/movie-ratings.servic
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
+  displayedColumns: string[] = ['title', 'releaseDate', 'genre', 'rating'];
+
   constructor(private ratings: MovieRatingsService) {}
 
   async ngOnInit(): Promise<void> {
