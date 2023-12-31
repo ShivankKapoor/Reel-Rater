@@ -4,11 +4,10 @@ import { environment } from '../../environments/environment.development';
 import { MovieModel } from '../models/movies.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MoviesService {
-
-  constructor() { }
+  constructor() {}
 
   async getAllRatings(): Promise<MovieModel[]> {
     const pb = new PocketBase(environment.baseUrl);
@@ -18,7 +17,7 @@ export class MoviesService {
     return records;
   }
 
-  async getMovie(code:string):Promise<MovieModel>{
+  async getMovie(code: string): Promise<MovieModel> {
     var query = 'id="' + code + '"';
     const pb = new PocketBase(environment.baseUrl);
     const record: MovieModel = await pb
