@@ -18,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDividerModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

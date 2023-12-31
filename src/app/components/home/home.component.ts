@@ -2,6 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { UserService } from '../../backend-services/user.service';
 import { catchError } from 'rxjs';
 import { UserModel } from '../../models/user.model';
+import { RatingsService } from '../../backend-services/ratings.service';
+import { RatingModel } from '../../models/rating.model';
+import { MoviesService } from '../../backend-services/movies.service';
+import { MovieRatingModel } from '../../models/movie-rating.model';
+import { CurrentUserService } from '../../authentication/current-user.service';
+import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +15,19 @@ import { UserModel } from '../../models/user.model';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  constructor(private UserService: UserService) {}
-  ngOnInit(): void {
-    this.loadUsers();
-  }
-  users!: UserModel[];
+  displayedColumns: string[] = ['title', 'releaseDate', 'genre', 'rating'];
 
-  private async loadUsers() {
+  constructor(private ratings: MovieRatingsService) {}
+
+  async ngOnInit(): Promise<void> {
+    await this.loadRatings();
+  }
+
+  userRatings!: MovieRatingModel[];
+
+  private async loadRatings() {
     try {
-      this.UserService.getSpecificUser("sachit");
-      this.users = await this.UserService.getUsers();
+      this.userRatings = await this.ratings.getMovieRatingsForUser();
     } catch (error) {
       console.log(error);
     }
