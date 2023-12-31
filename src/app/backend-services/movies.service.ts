@@ -17,4 +17,15 @@ export class MoviesService {
     });
     return records;
   }
+
+  async getMovie(code:string):Promise<MovieModel>{
+    var query = 'id="' + code + '"';
+    const pb = new PocketBase(environment.baseUrl);
+    const record: MovieModel = await pb
+      .collection('movies')
+      .getFirstListItem(query, {
+        expand: 'relField1,relField2.subRelField',
+      });
+    return record;
+  }
 }
