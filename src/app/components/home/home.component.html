@@ -1,9 +1,6 @@
-<p>home works!</p>
-
-
-
-    <div *ngFor="let rating of ratings">
-        <p>
-            {{rating.movie}} {{rating.rating}}
-        </p>
-    </div>
+<div *ngFor="let rating of userRatings">
+  <p>
+    {{ rating.title }} {{ rating.releaseDate }} {{ rating.genre }}
+    {{ rating.rating }}
+  </p>
+</div>
