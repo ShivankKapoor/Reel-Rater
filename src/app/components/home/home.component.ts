@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadRatings();
   }
-  users!: UserModel[];
   ratings!: RatingModel[];
   private async loadRatings() {
     try {
