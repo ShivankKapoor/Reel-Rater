@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './new-review.component.scss'
 })
 export class NewReviewComponent {
+  title: string = '';
+  Release: string ='';
 
+  submit(){
+    
+  }
 }
