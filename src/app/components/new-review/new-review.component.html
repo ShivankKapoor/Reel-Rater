@@ -13,12 +13,19 @@
         <mat-form-field>
           <mat-label>Release Date</mat-label>
           <input matInput [matDatepicker]="picker" required />
-          <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle
             matIconSuffix
             [for]="picker"
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Genre</mat-label>
+          <input matInput [(ngModel)]="title" name="username" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Rating</mat-label>
+          <input matInput [(ngModel)]="rating" name="username" required />
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="submit()">
           Submit

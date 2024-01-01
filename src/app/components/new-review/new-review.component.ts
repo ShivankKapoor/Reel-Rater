@@ -3,13 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-new-review',
   templateUrl: './new-review.component.html',
-  styleUrl: './new-review.component.scss'
+  styleUrl: './new-review.component.scss',
 })
 export class NewReviewComponent {
   title: string = '';
-  Release: string ='';
-
-  submit(){
-    
-  }
+  release: string = '';
+  genre: string = '';
+  rating: string = '';
+  submit() {}
 }

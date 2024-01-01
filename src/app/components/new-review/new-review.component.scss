@@ -1,9 +1,10 @@
 :host {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     height: 100vh;
     margin-top: -100px;
+    padding-right: 400px;
   }
 
   .new-review-card {
