@@ -19,6 +19,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
+import { NewReviewComponent } from './components/new-review/new-review.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatTableModule} from '@angular/material/table';
     LoginPageComponent,
     RegistrationComponent,
     HomeComponent,
+    NewReviewComponent,
   ],
   imports: [
     BrowserModule,
