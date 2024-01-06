@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import PocketBase from 'PocketBase';
 import { environment } from '../../environments/environment.development';
 import { MovieModel } from '../models/movies.model';
+import { InputMovieModel } from '../models/input-movie.model';
+import { NewRatingModel } from '../models/new-rating.model';
+import { CurrentUserService } from '../authentication/current-user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +28,12 @@ export class MoviesService {
       .getFirstListItem(query, {
         expand: 'relField1,relField2.subRelField',
       });
+    return record;
+  }
+
+  async publishMovie(movie:InputMovieModel){
+    const pb = new PocketBase(environment.baseUrl);
+    const record = await pb.collection('movies').create(movie);
     return record;
   }
 }

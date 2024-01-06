@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
+import { InputRatingModel } from '../../models/input-rating.model';
 
 @Component({
   selector: 'app-new-review',
@@ -8,18 +10,18 @@ import { Component } from '@angular/core';
 export class NewReviewComponent {
 
   title: string = '';
-  releaseDate: Date=new Date();
+  releaseDate: Date = new Date();
   genre: string = '';
   rating: number = 1;
+
+  constructor(private movieService: MovieRatingsService) { }
 
   onRatingChange($event: number) {
     this.rating = $event;
   }
 
   submit() {
-    console.log("Title: "+this.title);
-    console.log("Release: "+this.releaseDate);
-    console.log("Genre: "+this.genre);
-    console.log("Rating: "+this.rating);
+    var movie: InputRatingModel = { title: this.title, genre: this.genre, releaseDate: this.releaseDate, rating: this.rating }
+    this.movieService.publishMovieRating(movie);
   }
 }

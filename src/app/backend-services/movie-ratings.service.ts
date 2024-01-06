@@ -4,6 +4,12 @@ import { MoviesService } from './movies.service';
 import { CurrentUserService } from '../authentication/current-user.service';
 import { RatingModel } from '../models/rating.model';
 import { MovieRatingModel } from '../models/movie-rating.model';
+import { InputRatingModel } from '../models/input-rating.model';
+import { InputMovieModel } from '../models/input-movie.model';
+import { NewRatingModel } from '../models/new-rating.model';
+import PocketBase from 'PocketBase';
+import { environment } from '../../environments/environment';
+import { Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +18,9 @@ export class MovieRatingsService {
   constructor(
     private rating: RatingsService,
     private movies: MoviesService,
-    private user: CurrentUserService
-  ) {}
+    private user: CurrentUserService,
+    private router:Router
+  ) { }
 
   async getMovieRatingsForUser(): Promise<MovieRatingModel[]> {
     var ratings!: RatingModel[];
@@ -35,5 +42,14 @@ export class MovieRatingsService {
       console.log(error);
       return [];
     }
+  }
+
+  async publishMovieRating(rating: InputRatingModel) {
+    const pb = new PocketBase(environment.baseUrl);
+    var newMovie: InputMovieModel = { title: rating.title, genre: rating.genre, release: rating.releaseDate }
+    var response = await this.movies.publishMovie(newMovie);
+    var movieId = response.id;
+    var newRating: NewRatingModel = { author: this.user.getKey(), movie: movieId, rating: rating.rating };
+    const record = await pb.collection('ratings').create(newRating).then(() => { this.router.navigate(['home']);})
   }
 }
