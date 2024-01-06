@@ -19,7 +19,7 @@ export class MovieRatingsService {
     private rating: RatingsService,
     private movies: MoviesService,
     private user: CurrentUserService,
-    private router:Router
+    private router: Router
   ) { }
 
   async getMovieRatingsForUser(): Promise<MovieRatingModel[]> {
@@ -50,6 +50,6 @@ export class MovieRatingsService {
     var response = await this.movies.publishMovie(newMovie);
     var movieId = response.id;
     var newRating: NewRatingModel = { author: this.user.getKey(), movie: movieId, rating: rating.rating };
-    const record = await pb.collection('ratings').create(newRating).then(() => { this.router.navigate(['home']);})
+    const record = await pb.collection('ratings').create(newRating).then(() => { this.router.navigate(['home']); })
   }
 }

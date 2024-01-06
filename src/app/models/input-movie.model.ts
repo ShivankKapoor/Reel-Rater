@@ -1,6 +1,5 @@
 export interface InputMovieModel {
-    title:string;
-    release:Date;
-    genre:string;
-  }
-  
+  title: string;
+  release: Date;
+  genre: string;
+}

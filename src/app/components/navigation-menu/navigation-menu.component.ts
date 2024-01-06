@@ -11,24 +11,24 @@ import { Router } from '@angular/router';
 export class NavigationMenuComponent {
   events: string[] = [];
   opened: boolean | undefined;
-  constructor(private sidebarControlService: SidebarControlService, public userService:CurrentUserService, private router:Router) {}
+  constructor(private sidebarControlService: SidebarControlService, public userService: CurrentUserService, private router: Router) { }
   ngOnInit() {
     this.sidebarControlService.sidebarToggle$.subscribe(() => {
       this.opened = !this.opened;
     });
   }
 
-  logout(){
+  logout() {
     this.userService.logout();
     this.closeMenu();
   }
 
-  goHome(){
+  goHome() {
     this.router.navigate(['home']);
     this.closeMenu();
   }
 
-  newReview(){
+  newReview() {
     this.router.navigate(['add-review']);
     this.closeMenu();
   }

@@ -3,14 +3,12 @@ import PocketBase from 'PocketBase';
 import { environment } from '../../environments/environment.development';
 import { MovieModel } from '../models/movies.model';
 import { InputMovieModel } from '../models/input-movie.model';
-import { NewRatingModel } from '../models/new-rating.model';
-import { CurrentUserService } from '../authentication/current-user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
-  constructor() {}
+  constructor() { }
 
   async getAllRatings(): Promise<MovieModel[]> {
     const pb = new PocketBase(environment.baseUrl);
@@ -31,7 +29,7 @@ export class MoviesService {
     return record;
   }
 
-  async publishMovie(movie:InputMovieModel){
+  async publishMovie(movie: InputMovieModel) {
     const pb = new PocketBase(environment.baseUrl);
     const record = await pb.collection('movies').create(movie);
     return record;
