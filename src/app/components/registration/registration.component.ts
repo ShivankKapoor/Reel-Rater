@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RegisterModel } from '../../models/register.model';
 import { RegistrationService } from '../../backend-services/registration.service';
 import { Router } from '@angular/router';
-import { MiniWarningService } from '../../warning services/mini-warning.service';
+import { MiniWarningService } from '../../services/warning services/mini-warning.service';
 
 @Component({
   selector: 'app-registration',
