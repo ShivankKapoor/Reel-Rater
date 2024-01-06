@@ -6,9 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './new-review.component.scss',
 })
 export class NewReviewComponent {
+
   title: string = '';
   release: string = '';
   genre: string = '';
-  rating: string = '';
-  submit() {}
+  rating: number = 1;
+
+  onRatingChange($event: number) {
+    this.rating = $event;
+  }
+
+  submit() {
+    console.log(this.rating);
+  }
 }
