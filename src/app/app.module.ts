@@ -22,6 +22,7 @@ import {MatTableModule} from '@angular/material/table';
 import { NewReviewComponent } from './components/new-review/new-review.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     RegistrationComponent,
     HomeComponent,
     NewReviewComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
