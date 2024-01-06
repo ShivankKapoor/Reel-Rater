@@ -12,7 +12,7 @@
 
         <mat-form-field>
           <mat-label>Release Date</mat-label>
-          <input matInput [matDatepicker]="picker" required />
+          <input matInput name="releaseDate" [matDatepicker]="picker" required [(ngModel)]="releaseDate"  />
           <mat-datepicker-toggle
             matIconSuffix
             [for]="picker"

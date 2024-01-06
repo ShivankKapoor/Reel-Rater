@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class NewReviewComponent {
 
   title: string = '';
-  release: string = '';
+  releaseDate: Date=new Date();
   genre: string = '';
   rating: number = 1;
 
@@ -17,6 +17,9 @@ export class NewReviewComponent {
   }
 
   submit() {
-    console.log(this.rating);
+    console.log("Title: "+this.title);
+    console.log("Release: "+this.releaseDate);
+    console.log("Genre: "+this.genre);
+    console.log("Rating: "+this.rating);
   }
 }
