@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   formatDate(date: string) {
-    const inputDateString = '2008-04-26 05:00:00.000Z';
+    const inputDateString = date;
     const inputDate = new Date(inputDateString);
 
     const outputDateString = inputDate.toLocaleDateString('en-US', {
