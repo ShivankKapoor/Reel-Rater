@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
 import { InputRatingModel } from '../../models/input-rating.model';
 import { MiniWarningService } from '../../services/warning services/mini-warning.service';
+import { StringFormattingService } from '../../services/string-formatting/string-formatting.service';
 
 @Component({
   selector: 'app-new-review',
@@ -14,7 +15,7 @@ export class NewReviewComponent {
   genre: string = '';
   rating: number = 1;
 
-  constructor(private movieService: MovieRatingsService, private warn:MiniWarningService) {}
+  constructor(private movieService: MovieRatingsService, private warn:MiniWarningService, private str:StringFormattingService) {}
 
   onRatingChange($event: number) {
     this.rating = $event;
@@ -25,8 +26,8 @@ export class NewReviewComponent {
       this.warn.openSnackBar("Form cannot be blank","Close");
     } else {
       var movie: InputRatingModel = {
-        title: this.title,
-        genre: this.genre,
+        title: this.str.toServer(this.title),
+        genre: this.str.toServer(this.genre),
         releaseDate: this.releaseDate,
         rating: this.rating,
       };
