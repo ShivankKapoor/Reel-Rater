@@ -1,3 +1,8 @@
 <div class="star-rating">
-  <span *ngFor="let star of stars" (click)="rate(star)" [class.selected]="star <= rating">&#9733;</span>
+  <span *ngFor="let star of stars; let i = index"
+        (click)="rate(star)"
+        (mouseover)="setHoveredStarIndex(i)"
+        [class.selected]="star <= rating || i <= hoveredStarIndex">
+    &#9733;
+  </span>
 </div>
