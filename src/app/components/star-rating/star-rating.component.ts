@@ -3,14 +3,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-star-rating',
   templateUrl: './star-rating.component.html',
-  styleUrls: ['./star-rating.component.scss']
+  styleUrls: ['./star-rating.component.scss'],
 })
 export class StarRatingComponent {
   @Input() rating: number = 0;
   @Output() ratingChange: EventEmitter<number> = new EventEmitter<number>();
   lastClickedIndex: number = 0;
   hoveredStarIndex: number = 0;
-  stars: number[] = [1, 2, 3, 4, 5];
+  stars: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   rate(rating: number): void {
     this.rating = rating;
