@@ -1,13 +1,13 @@
 .star-container {
-    display: inline-block;
-  }
-  
-  .star {
-    font-size: 24px;
-    color: #ccc;
-    cursor: pointer;
-  }
-  
-  .filled {
-    color: gold;
-  }
+  display: inline-block;
+}
+
+.star {
+  font-size: 24px;
+  color: #ccc;
+  cursor: default;
+}
+
+.filled {
+  color: gold;
+}
