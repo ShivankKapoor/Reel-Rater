@@ -2,6 +2,7 @@
   <span *ngFor="let star of stars; let i = index"
         (click)="rate(star)"
         (mouseover)="setHoveredStarIndex(i)"
+        (mouseout)="clearHover()"
         [class.selected]="star <= rating || i <= hoveredStarIndex">
     &#9733;
   </span>
