@@ -20,6 +20,7 @@
           <mat-label>Genre</mat-label>
           <input matInput [(ngModel)]="genre" name="username" required />
         </mat-form-field>
+        <mat-label>Rating</mat-label>
         <app-star-rating [rating]="rating" (ratingChange)="onRatingChange($event)"></app-star-rating>
         <button mat-raised-button color="primary" (click)="submit()">
           Submit
