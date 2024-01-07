@@ -19,6 +19,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
+import { NewReviewComponent } from './components/new-review/new-review.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     LoginPageComponent,
     RegistrationComponent,
     HomeComponent,
+    NewReviewComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,9 @@ import {MatTableModule} from '@angular/material/table';
     MatCheckboxModule,
     MatFormFieldModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent],

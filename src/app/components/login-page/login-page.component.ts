@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../backend-services/user.service';
 import { Router } from '@angular/router';
-import { MiniWarningService } from '../../warning services/mini-warning.service';
+import { MiniWarningService } from '../../services/warning services/mini-warning.service';
 import { CurrentUserService } from '../../authentication/current-user.service';
+import { StringFormattingService } from '../../services/string-formatting/string-formatting.service';
 
 @Component({
   selector: 'app-login-page',
@@ -14,6 +15,7 @@ export class LoginPageComponent {
   password: string = '';
   showPasswordValue: boolean = false;
   constructor(
+    private str:StringFormattingService,
     private userservice: UserService,
     private router: Router,
     private warning: MiniWarningService,
@@ -21,6 +23,7 @@ export class LoginPageComponent {
   ) {}
 
   async login() {
+    this.username=this.str.toServer(this.username);
     if (this.username === '' && this.password === '') {
       this.warning.openSnackBar('Fields cannot be blank', 'Close');
     } else if (this.username === '') {

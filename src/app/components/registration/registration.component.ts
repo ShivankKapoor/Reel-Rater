@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RegisterModel } from '../../models/register.model';
 import { RegistrationService } from '../../backend-services/registration.service';
 import { Router } from '@angular/router';
-import { MiniWarningService } from '../../warning services/mini-warning.service';
+import { MiniWarningService } from '../../services/warning services/mini-warning.service';
+import { StringFormattingService } from '../../services/string-formatting/string-formatting.service';
 
 @Component({
   selector: 'app-registration',
@@ -15,16 +16,21 @@ export class RegistrationComponent {
   retypedPassword: string ="";
   showPasswordValue:boolean = false;
 
-  constructor(private registerUser:RegistrationService,private router: Router, private warn:MiniWarningService){}
+  constructor(private registerUser:RegistrationService,private router: Router, private warn:MiniWarningService, private str:StringFormattingService){}
 
   showPassword(){
     this.showPasswordValue=!this.showPasswordValue;
   }
 
-  register(){
+  async register(){
+    this.username=this.str.toServer(this.username);
     if(this.password===""||this.username===""||this.retypedPassword===""){
-      this.warn.openSnackBar("Fields cannot be left blank","Close")
+      this.warn.openSnackBar("Fields cannot be left blank","Close");
       return
+    }
+    if(await this.registerUser.userExists(this.username)){
+      this.warn.openSnackBar("User already exists","Close");
+      return;
     }
     if(this.password===this.retypedPassword){
       var newUser:RegisterModel={username:this.username, password:this.password}

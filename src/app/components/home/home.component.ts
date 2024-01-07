@@ -1,13 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { UserService } from '../../backend-services/user.service';
-import { catchError } from 'rxjs';
-import { UserModel } from '../../models/user.model';
-import { RatingsService } from '../../backend-services/ratings.service';
-import { RatingModel } from '../../models/rating.model';
-import { MoviesService } from '../../backend-services/movies.service';
 import { MovieRatingModel } from '../../models/movie-rating.model';
-import { CurrentUserService } from '../../authentication/current-user.service';
 import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
+import { StringFormattingService } from '../../services/string-formatting/string-formatting.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +11,10 @@ import { MovieRatingsService } from '../../backend-services/movie-ratings.servic
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['title', 'releaseDate', 'genre', 'rating'];
 
-  constructor(private ratings: MovieRatingsService) {}
+  constructor(
+    public str: StringFormattingService,
+    private ratings: MovieRatingsService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     await this.loadRatings();
@@ -31,5 +28,17 @@ export class HomeComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  formatDate(date: string) {
+    const inputDateString = '2008-04-26 05:00:00.000Z';
+    const inputDate = new Date(inputDateString);
+
+    const outputDateString = inputDate.toLocaleDateString('en-US', {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric',
+    });
+    return outputDateString;
   }
 }
