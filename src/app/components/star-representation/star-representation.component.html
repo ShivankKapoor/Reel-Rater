@@ -1,0 +1,5 @@
+<div class="star-container">
+  <ng-container *ngFor="let star of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+    <span class="star" [class.filled]="star <= rating">&#9733;</span>
+  </ng-container>
+</div>

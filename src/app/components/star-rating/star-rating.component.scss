@@ -2,12 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .star-rating span {
+  color: #ccc;
   cursor: pointer;
-  margin: 0 3px;
+  margin: 0 5px;
 }
 
 .star-rating span.selected {
