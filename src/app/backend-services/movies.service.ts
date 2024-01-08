@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import PocketBase from 'PocketBase';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { MovieModel } from '../models/movies.model';
 import { InputMovieModel } from '../models/input-movie.model';
 

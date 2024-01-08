@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import PocketBase from 'PocketBase';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { RatingModel } from '../models/rating.model';
 
 @Injectable({
