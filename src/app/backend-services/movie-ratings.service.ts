@@ -44,10 +44,20 @@ export class MovieRatingsService {
     }
   }
 
+  async deleteReviewIfExistsForUser(movieId: string) {
+    var ratings = await this.rating.getUserRatings(this.user.getKey());
+    for(var i=0;i<ratings.length;i++){
+      if (ratings[i].movie===movieId){
+        await this.rating.deleteRating(ratings[i].id);
+      }
+    }
+  }
+
   async publishMovieRating(rating: InputRatingModel) {
     const pb = new PocketBase(environment.baseUrl);
     var newMovie: InputMovieModel = { title: rating.title, genre: rating.genre, release: rating.releaseDate }
     var response = await this.movies.publishMovie(newMovie);
+    await this.deleteReviewIfExistsForUser(response.id);
     var movieId = response.id;
     var newRating: NewRatingModel = { author: this.user.getKey(), movie: movieId, rating: rating.rating };
     const record = await pb.collection('ratings').create(newRating).then(() => { this.router.navigate(['home']); })
