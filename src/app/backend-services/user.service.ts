@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import PocketBase from 'PocketBase';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { UserModel } from '../models/user.model';
 @Injectable({
   providedIn: 'root',
