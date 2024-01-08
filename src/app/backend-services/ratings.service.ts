@@ -31,4 +31,9 @@ export class RatingsService {
     }
     return returnArray;
   }
+
+  async deleteRating(movieId:string){
+    const pb = new PocketBase(environment.baseUrl);
+    await pb.collection('ratings').delete(movieId);
+  }
 }
