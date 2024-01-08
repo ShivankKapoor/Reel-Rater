@@ -22,8 +22,8 @@ import {MatTableModule} from '@angular/material/table';
 import { NewReviewComponent } from './components/new-review/new-review.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { StarRatingComponent } from './components/star-rating/star-rating.component';
-import { StarRepresentationComponent } from './components/star-representation/star-representation.component';
+import { StarRatingComponent } from './components/stars/star-rating/star-rating.component';
+import { StarRepresentationComponent } from './components/stars/star-representation/star-representation.component';
 
 @NgModule({
   declarations: [
