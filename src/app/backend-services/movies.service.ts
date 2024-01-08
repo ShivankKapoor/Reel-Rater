@@ -10,7 +10,7 @@ import { InputMovieModel } from '../models/input-movie.model';
 export class MoviesService {
   constructor() { }
 
-  async getAllRatings(): Promise<MovieModel[]> {
+  async getAllMovies(): Promise<MovieModel[]> {
     const pb = new PocketBase(environment.baseUrl);
     const records: MovieModel[] = await pb.collection('movies').getFullList({
       sort: '-created',
@@ -29,9 +29,25 @@ export class MoviesService {
     return record;
   }
 
+  async movieExists(title: string) {
+    const response = await this.getAllMovies();
+    for (var i = 0; i < response.length; i++) {
+      if (response[i].title === title) {
+        return (response[i].id);
+      }
+    }
+    return false;
+  }
+
   async publishMovie(movie: InputMovieModel) {
-    const pb = new PocketBase(environment.baseUrl);
-    const record = await pb.collection('movies').create(movie);
-    return record;
+    const exists = await this.movieExists(movie.title);
+
+    if (!exists) {
+      const pb = new PocketBase(environment.baseUrl);
+      const record = await pb.collection('movies').create(movie);
+      return record;
+    }
+    var movieId:string=exists;
+    return (await this.getMovie(movieId))
   }
 }
