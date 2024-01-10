@@ -29,12 +29,8 @@ export class HomeComponent implements OnInit {
   }
 
   rowClick(row: MovieRatingModel) {
-    console.log(this.clickedRows);
-    if (this.clickedRows.has(row)) {
-      this.clickedRows.delete(row);
-    } else {
-      this.clickedRows.add(row);
-    }
+    this.clickedRows.clear();
+    this.clickedRows.add(row);
   }
 
   isRowClicked(row: MovieRatingModel): boolean {
