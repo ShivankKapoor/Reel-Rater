@@ -33,11 +33,6 @@ export class NavigationMenuComponent {
     this.closeMenu();
   }
 
-  deleteReview(){
-    this.router.navigate(['delete-review']);
-    this.closeMenu();
-  }
-
   closeMenu() {
     this.sidebarControlService.toggleSidebar();
   }
