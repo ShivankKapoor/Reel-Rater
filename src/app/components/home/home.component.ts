@@ -10,11 +10,9 @@ import { StringFormattingService } from '../../services/string-formatting/string
 })
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['title', 'releaseDate', 'genre', 'rating'];
+  clickedRows = new Set<MovieRatingModel>();
 
-  constructor(
-    public str: StringFormattingService,
-    private ratings: MovieRatingsService
-  ) {}
+  constructor(public str: StringFormattingService, private ratings: MovieRatingsService) {}
 
   async ngOnInit(): Promise<void> {
     await this.loadRatings();
@@ -28,6 +26,19 @@ export class HomeComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  rowClick(row: MovieRatingModel) {
+    console.log(this.clickedRows);
+    if (this.clickedRows.has(row)) {
+      this.clickedRows.delete(row);
+    } else {
+      this.clickedRows.add(row);
+    }
+  }
+
+  isRowClicked(row: MovieRatingModel): boolean {
+    return this.clickedRows.has(row);
   }
 
   formatDate(date: string) {

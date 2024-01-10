@@ -27,12 +27,17 @@
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr
+      mat-row
+      (click)="rowClick(row)"
+      [class.clicked-row]="isRowClicked(row)"
+      *matRowDef="let row; columns: displayedColumns"
+    ></tr>
   </table>
 </div>
 <!-- <div *ngFor="let rating of userRatings">
-  <p>
-    {{ rating.title }} {{ rating.releaseDate }} {{ rating.genre }}
-    {{ rating.rating }}
-  </p>
-</div> -->
+    <p>
+      {{ rating.title }} {{ rating.releaseDate }} {{ rating.genre }}
+      {{ rating.rating }}
+    </p>
+  </div> -->
