@@ -23,7 +23,12 @@ export class ToolbarComponent {
       }
     });
   }
+
   addReview() {
     this.router.navigate(['add-review']);
+  }
+
+  deleteItem(){
+    location.reload();
   }
 }

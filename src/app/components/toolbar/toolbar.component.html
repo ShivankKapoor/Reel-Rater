@@ -1,11 +1,27 @@
 <div class="toolbar">
-  <button mat-raised-button color="primary" class="add-button" (click)="addReview()">
+  <button
+    mat-raised-button
+    color="primary"
+    class="add-button"
+    (click)="addReview()"
+  >
     Add<mat-icon>add</mat-icon>
   </button>
-  <button mat-raised-button color="warn" class="remove-button" [disabled]="!hasSelection">
+  <button
+    mat-raised-button
+    color="warn"
+    class="remove-button"
+    [disabled]="!hasSelection"
+    (click)="deleteItem()"
+  >
     Delete<mat-icon>remove</mat-icon>
   </button>
-  <button mat-raised-button color="accent" class="edit-button" [disabled]="!hasSelection">
+  <button
+    mat-raised-button
+    color="accent"
+    class="edit-button"
+    [disabled]="!hasSelection"
+  >
     <mat-icon>edit</mat-icon>Edit
   </button>
 </div>
