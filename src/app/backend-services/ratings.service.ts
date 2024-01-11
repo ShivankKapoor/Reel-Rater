@@ -32,7 +32,20 @@ export class RatingsService {
     return returnArray;
   }
 
-  async deleteRating(movieId:string){
+  async getRating(id: string): Promise<RatingModel> {
+    const pb = new PocketBase(environment.baseUrl);
+    var myDefault: RatingModel;
+    var ratings = await this.getAllRatings();
+    myDefault = ratings[0];
+    for (var i = 0; i < ratings.length; i++) {
+      if (ratings[i].id === id) {
+        return ratings[i];
+      }
+    }
+    return myDefault;
+  }
+
+  async deleteRating(movieId: string) {
     const pb = new PocketBase(environment.baseUrl);
     await pb.collection('ratings').delete(movieId);
   }

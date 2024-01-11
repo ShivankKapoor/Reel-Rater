@@ -5,8 +5,8 @@
 <div class="review-table">
   <table mat-table [dataSource]="userRatings" class="mat-elevation-z8">
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef>Title</th>
-      <td mat-cell *matCellDef="let rating">
+      <th mat-header-cell *matHeaderCellDef class="title-cell">Title</th>
+      <td mat-cell *matCellDef="let rating" class="title-cell">
         {{ this.str.toTitleCase(rating.title) }}
       </td>
     </ng-container>
