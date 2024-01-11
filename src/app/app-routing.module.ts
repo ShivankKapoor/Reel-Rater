@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [RedoLoginGuardService]},
   { path: 'register', component: RegistrationComponent, canActivate: [RedoLoginGuardService] },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
-  { path: 'add-review', component: NewReviewComponent, canActivate: [AuthGuardService]},
+  { path: 'add-review', component: NewReviewComponent, canActivate: [AuthGuardService]}
 ];
 
 @NgModule({

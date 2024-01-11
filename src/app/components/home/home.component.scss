@@ -1,3 +1,21 @@
 .review-table{
-    padding: 20px;
+    margin-top: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: rgb(4, 147, 226);
+  }
+
+.mat-mdc-row.clicked-row .mat-mdc-cell {
+    border-color: rgb(4, 147, 226);
+    background-color: rgba(4, 147, 226, 0.1);
+  }

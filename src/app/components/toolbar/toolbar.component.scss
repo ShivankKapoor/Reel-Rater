@@ -1,0 +1,23 @@
+.toolbar {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right side */
+    align-items: center;
+    padding-top: 40px;
+    padding-right: 40px;
+  }
+  
+  .spacer {
+    flex: 1; /* This element will take up the available space, pushing the button to the right */
+  }
+  
+  .edit-button {
+    margin-left: 10px; /* Add margin for spacing if needed */
+  }
+  
+  .add-button{
+    margin-left: 10px;
+  }
+
+  .remove-button {
+    margin-left: 10px; /* Add margin for spacing if needed */
+  }
