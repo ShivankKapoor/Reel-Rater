@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarControlService } from '../navigation-menu/sidebar-control.service';
 import { CurrentUserService } from '../../authentication/current-user.service';
 import { Router } from '@angular/router';
+import { HomeSelectionService } from '../home/home-selection.service';
 
 @Component({
   selector: 'app-title-bar',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class TitleBarComponent {
   userName: string = ""
-  constructor(private sidebarControlService: SidebarControlService, public userService: CurrentUserService, private router: Router) { }
+  constructor(private sidebarControlService: SidebarControlService, public userService: CurrentUserService, private router: Router, private selection:HomeSelectionService) { }
 
   toggleSidebar() {
     this.sidebarControlService.toggleSidebar();
@@ -23,6 +24,7 @@ export class TitleBarComponent {
   }
 
   goHome() {
+    this.selection.clearItems();
     this.router.navigate(['home']);
   }
 
