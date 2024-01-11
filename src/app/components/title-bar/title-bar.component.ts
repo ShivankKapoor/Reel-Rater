@@ -10,8 +10,13 @@ import { HomeSelectionService } from '../home/home-selection.service';
   styleUrl: './title-bar.component.scss',
 })
 export class TitleBarComponent {
-  userName: string = ""
-  constructor(private sidebarControlService: SidebarControlService, public userService: CurrentUserService, private router: Router, private selection:HomeSelectionService) { }
+  userName: string = '';
+  constructor(
+    private sidebarControlService: SidebarControlService,
+    public userService: CurrentUserService,
+    private router: Router,
+    private selection: HomeSelectionService
+  ) {}
 
   toggleSidebar() {
     this.sidebarControlService.toggleSidebar();
@@ -19,7 +24,8 @@ export class TitleBarComponent {
 
   canShowSidebar(): boolean {
     var properCapital = this.userService.getUserName();
-    this.userName = properCapital.charAt(0).toUpperCase() + properCapital.slice(1);
+    this.userName =
+      properCapital.charAt(0).toUpperCase() + properCapital.slice(1);
     return this.userService.isUserLoggedIn();
   }
 
@@ -27,5 +33,4 @@ export class TitleBarComponent {
     this.selection.clearItems();
     this.router.navigate(['home']);
   }
-
 }
