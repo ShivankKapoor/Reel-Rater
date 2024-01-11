@@ -37,4 +37,8 @@ export class ToolbarComponent {
     await this.movieRatings.deleteRating(this.selectedItemId);
     location.reload();
   }
+
+  editReview() {
+    this.router.navigate(['edit-review']);
+  }
 }
