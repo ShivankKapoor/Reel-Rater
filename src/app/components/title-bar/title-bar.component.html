@@ -1,35 +1,26 @@
 <div class="topBar">
   <div class="side-button" *ngIf="canShowSidebar()">
-    <button
-      class="button-button"
-      (click)="toggleSidebar()"
-      mat-stroked-button
-      aria-label="Example icon button with a menu icon"
-    >
+    <button class="button-button" (click)="toggleSidebar()" mat-stroked-button
+      aria-label="Example icon button with a menu icon">
       <mat-icon class="button-icon">menu</mat-icon>
     </button>
   </div>
   <a class="link">
     <img class="text" (click)="goHome()" src="assets/Header.png" />
   </a>
-  <button
-    *ngIf="canShowSidebar()"
-    [matMenuTriggerFor]="menu"
-    mat-button
-    class="userName"
-  >
+  <button *ngIf="canShowSidebar()" [matMenuTriggerFor]="menu" mat-button class="userName">
     Hello, {{ this.userName }}!
   </button>
 </div>
 
 <mat-menu #menu="matMenu">
   <div class="menu-content">
-    <button
-      mat-raised-button
-      color="warn"
-      class="logout-button"
-      (click)="this.userService.logout()"
-    >
+    <button mat-button class="button">
+      <mat-icon>settings</mat-icon>Settings
+    </button>
+  </div>
+  <div class="menu-content">
+    <button mat-button color="warn" class="button" (click)="this.userService.logout()">
       <mat-icon>logout</mat-icon>Logout
     </button>
   </div>
