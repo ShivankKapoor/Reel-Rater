@@ -25,6 +25,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { StarRatingComponent } from './components/stars/star-rating/star-rating.component';
 import { StarRepresentationComponent } from './components/stars/star-representation/star-representation.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     StarRatingComponent,
     StarRepresentationComponent,
     ToolbarComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
