@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import PocketBase from 'PocketBase';
 import { environment } from '../../environments/environment';
 import { RatingModel } from '../models/rating.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -48,5 +49,10 @@ export class RatingsService {
   async deleteRating(movieId: string) {
     const pb = new PocketBase(environment.baseUrl);
     await pb.collection('ratings').delete(movieId);
+  }
+
+  async updateRating(id: string, data: any) {
+    const pb = new PocketBase(environment.baseUrl);
+    const record = await pb.collection('ratings').update(id, data);
   }
 }

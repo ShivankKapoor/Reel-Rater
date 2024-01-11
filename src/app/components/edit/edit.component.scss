@@ -28,3 +28,24 @@
       margin-top: 20px;
     }
   }
+
+  .old-user-card {
+    max-width: 400px;
+    width: 100%;
+  
+    mat-card-header {
+      text-align: center;
+    }
+  
+    mat-form-field {
+      width: 100%;
+    }
+  
+    mat-card-title {
+      padding-bottom: 15px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
