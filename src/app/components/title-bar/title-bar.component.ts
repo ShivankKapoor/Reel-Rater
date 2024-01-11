@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarControlService } from '../navigation-menu/sidebar-control.service';
 import { CurrentUserService } from '../../authentication/current-user.service';
 import { Router } from '@angular/router';
-import { HomeSelectionService } from '../home/home-selection.service';
+import { HomeSelectionService } from '../home/selection/home-selection.service';
 
 @Component({
   selector: 'app-title-bar',

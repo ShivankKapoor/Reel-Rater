@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MovieRatingModel } from '../../models/movie-rating.model';
 import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
 import { StringFormattingService } from '../../services/string-formatting/string-formatting.service';
-import { HomeSelectionService } from './home-selection.service';
+import { HomeSelectionService } from './selection/home-selection.service';
 
 @Component({
   selector: 'app-home',

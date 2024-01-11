@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarControlService } from '../../navigation-menu/sidebar-control.service';
-import { HomeSelectionService } from '../home-selection.service';
+import { HomeSelectionService } from '../selection/home-selection.service';
 import { MovieRatingsService } from '../../../backend-services/movie-ratings.service';
 import { MovieRatingModel } from '../../../models/movie-rating.model';
 
