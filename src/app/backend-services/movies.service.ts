@@ -50,4 +50,9 @@ export class MoviesService {
     var movieId:string=exists;
     return (await this.getMovie(movieId))
   }
+
+  async updateMovie(id:string, data:any){
+    const pb = new PocketBase(environment.baseUrl);
+    const record = await pb.collection('movies').update(id, data);
+  }
 }

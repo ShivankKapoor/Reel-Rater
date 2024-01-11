@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SidebarControlService } from '../navigation-menu/sidebar-control.service';
-import { HomeSelectionService } from '../home/home-selection.service';
-import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
-import { MovieRatingModel } from '../../models/movie-rating.model';
+import { SidebarControlService } from '../../navigation-menu/sidebar-control.service';
+import { HomeSelectionService } from '../selection/home-selection.service';
+import { MovieRatingsService } from '../../../backend-services/movie-ratings.service';
+import { MovieRatingModel } from '../../../models/movie-rating.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -36,5 +36,9 @@ export class ToolbarComponent {
   async deleteItem() {
     await this.movieRatings.deleteRating(this.selectedItemId);
     location.reload();
+  }
+
+  editReview() {
+    this.router.navigate(['edit-review']);
   }
 }
