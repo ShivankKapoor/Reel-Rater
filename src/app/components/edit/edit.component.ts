@@ -9,7 +9,6 @@ import { MoviesService } from '../../backend-services/movies.service';
   styleUrl: './edit.component.scss',
 })
 export class EditComponent implements OnInit {
-  
   ratingId: string = '';
   movieId: string = '';
   title: string = '';
@@ -33,8 +32,8 @@ export class EditComponent implements OnInit {
     var movieObject = await this.movies.getMovie(this.movieId);
     this.title = movieObject.title;
     this.rating = ratingObject.rating;
-    this.releaseDate=new Date(movieObject.release);
-    this.genre=movieObject.genre;
+    this.releaseDate = new Date(movieObject.release);
+    this.genre = movieObject.genre;
   }
 
   submit() {
@@ -42,8 +41,6 @@ export class EditComponent implements OnInit {
   }
 
   onRatingChange($event: number) {
-    throw new Error('Method not implemented.');
+    this.rating = $event;
   }
-
-  
 }
