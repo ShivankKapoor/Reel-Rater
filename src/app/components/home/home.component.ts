@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MovieRatingModel } from '../../models/movie-rating.model';
 import { MovieRatingsService } from '../../backend-services/movie-ratings.service';
 import { StringFormattingService } from '../../services/string-formatting/string-formatting.service';
@@ -9,7 +9,7 @@ import { HomeSelectionService } from './home-selection.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['title', 'releaseDate', 'genre', 'rating'];
   clickedRows = new Set<MovieRatingModel>();
 
@@ -18,9 +18,11 @@ export class HomeComponent implements OnInit {
     private ratings: MovieRatingsService,
     private selection: HomeSelectionService
   ) {}
+  ngOnDestroy(): void {
+    this.selection.clearItems();
+  }
 
   async ngOnInit(): Promise<void> {
-    this.selection.clearItems();
     await this.loadRatings();
   }
 
